@@ -1,0 +1,25 @@
+{
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "restaurantes",
+      "descricao": "lugares para alimentação"
+    },
+    {
+      "nome": "shopping Novo",
+      "descricao": "lugares para fazer compras e passear",
+      "id": "2"
+    },
+    {
+      "nome": "praias",
+      "descricao": "lugares para tomar banho com a familia",
+      "id": "2JDDn73pe24"
+    },
+    {
+      "nome": "teste",
+      "descricao": "teste",
+      "id": "Htd1CDwLCJk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
