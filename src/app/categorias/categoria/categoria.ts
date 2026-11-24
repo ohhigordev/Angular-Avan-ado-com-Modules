@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-categoria',
@@ -6,4 +7,26 @@ import { Component } from '@angular/core';
   styleUrl: './categoria.scss',
   templateUrl: './categoria.html',
 })
-export class Categoria {}
+export class Categoria {
+  camposForm: FormGroup;
+
+  constructor(){
+    this.camposForm = new FormGroup({
+        nome: new FormControl('',Validators.required),
+        descricao: new FormControl('', Validators.required)
+    });
+  }
+
+  salvar(){
+    this.camposForm.markAllAsTouched();
+
+    if(this.camposForm.valid){
+      console.log('valores digitados: ', this.camposForm.value)
+    }
+  }
+
+  isCampoInvalido(nomeCampo: string) : boolean{
+    const campo = this.camposForm.get(nomeCampo);
+     return campo?.invalid && campo?.touched && campo?.errors?.['required'];
+  }
+}
